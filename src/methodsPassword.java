@@ -2,27 +2,27 @@
 import javax.swing.JOptionPane;
 
 public class methodsPassword {
-	String contraseñaCorrecta;
-	String contraseñaAcceso;
+	String contrasenaCorrecta;
+	String contrasenaAcceso;
 	char[] password;
 	String userCorrecto;
 	char[] user;
 	String userAcceso;
 	
-	public methodsPassword(String contraseña){
-		password = contraseña.toCharArray();
-		contraseñaCorrecta = contraseña;
+	public methodsPassword(String contrasena){
+		password = contrasena.toCharArray();
+		contrasenaCorrecta = contrasena;
 		JOptionPane.showMessageDialog(null, "Contraseña establecida");
 		
 	}//fin del metodo methodsPassword
 	
-	public void cambioContraseña(){
-		String contenedor = contraseñaCorrecta;
-		contraseñaCorrecta = JOptionPane.showInputDialog("Escriba una nueva contraseña");
-		password = contraseñaCorrecta.toCharArray();
-		if (contraseñaCorrecta.equals(contenedor)){
-			contraseñaCorrecta = JOptionPane.showInputDialog("¡CONTRASEÑA INVALIDA! Vuelva a escribir una nueva contraseña");
-			password = contraseñaCorrecta.toCharArray();
+	public void cambioContrasena(){
+		String contenedor = contrasenaCorrecta;
+		contrasenaCorrecta = JOptionPane.showInputDialog("Escriba una nueva contraseña");
+		password = contrasenaCorrecta.toCharArray();
+		if (contrasenaCorrecta.equals(contenedor)){
+			contrasenaCorrecta = JOptionPane.showInputDialog("¡CONTRASEÑA INVALIDA! Vuelva a escribir una nueva contraseña");
+			password = contrasenaCorrecta.toCharArray();
         }
 		else{}
 		
@@ -31,11 +31,11 @@ public class methodsPassword {
 	public void accesoSistema(){
 		int contador = 0;
 		int contadorUsuario = 0;
-		contraseñaAcceso = JOptionPane.showInputDialog("escriba su contraseña para accesar al sistema");
+		contrasenaAcceso = JOptionPane.showInputDialog("escriba su contraseña para accesar al sistema");
 		userAcceso = JOptionPane.showInputDialog("escriba su usuario para accesar al sistema");
 		char[] accesoUsuario = userAcceso.toCharArray();
-		char[] acceso = contraseñaAcceso.toCharArray();
-		for(int i = 0;i < contraseñaCorrecta.length();i++){
+		char[] acceso = contrasenaAcceso.toCharArray();
+		for(int i = 0;i < contrasenaCorrecta.length();i++){
 			if(password[i] == acceso[i]){
 				contador += 1;
 				
@@ -59,7 +59,7 @@ public class methodsPassword {
 			
 		}//fin del for
 		
-		if(contador == contraseñaCorrecta.length() && contadorUsuario == userCorrecto.length()){
+		if(contador == contrasenaCorrecta.length() && contadorUsuario == userCorrecto.length()){
 			JOptionPane.showMessageDialog(null, "Bienvenido al sistema "+ userCorrecto);
 		}
 		else{
